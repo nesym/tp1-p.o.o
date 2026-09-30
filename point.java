@@ -1,42 +1,120 @@
-package tp1;
 
 public class point {
-	private int abs;
-	private int ord;
+	
+		private int abs;
+		private int ord;
+		private String nom;
 	void affiche() {
 		System.out.println("abs = "+abs);
 		System.out.println("ord = "+ord);
+		System.out.println("nom = "+nom);
 	}
-	point(int a,int b){
+	point(int a,int b) {
 		abs=a;
 		ord=b;
 	}
-	point(int a){
+	
+	String getnom() {
+		return this.nom;
+	}
+	int getabscisse() {
+		return this.abs;
+	}
+	int getordonnes() {
+		return this.ord;
+	}
+	public void setnom(String nom) {
+		this.nom=nom;
+	}
+	public void setabscisse(int abs) {
+		this.abs=abs;
+	}
+	public void setordonne(int ord) {
+		this.ord=ord;
+	}
+	
+	
+	
+	
+	
+	point (int a){
 		abs=a;
 		ord=2*a;
 	}
-	void trht(int d) {
+	void TranslHoriz(int d) {
 		abs+=d;
 	}
-	void trul(int d,int d1) {
+	void TranslVert(int d, int d1) {
 		abs+=d;
 		ord+=d1;
 	}
-	class test{
-	public static void main(String[] args) {
-		point p;
-		p=new point(2,3);
-		point p1=new point(2);
-		p.affiche();
-		p1.affiche();
-		p.trht(5);
-		p1.trul(1, 1);
-		System.out.println("--------");
-		p.affiche();
-		System.out.println("--------");
-		p1.affiche();
+}
+/*
 
+	  class test{
+	public static void main(String[]arg) {
+			point p;
+			p=new point(2,3);
+		
+			point p1=new point(2);
+		
+			p.affiche();
+			p1.affiche();
+			
+			p.trht(5);
+			p1.trul(1, 1);
+			System.out.println("********");
+			p.affiche();
+			System.out.println("********");
+			p1.affiche();
+		}
 	}
+*/
 
-}
-}
+	  public class Test_Point
+	  {
+	  public static void main (String [] args)
+	  {
+	  point p1;
+	  p1 = new point (3, 5);
+	  point p2 = new point ("a");
+	  point p3 = new point ("b", 3,5);
+	  System.out.println("\n ---------------------------\n");
+	  System.out.println("les points créés sont :");
+	  p1.Affiche ();
+	  p2.Affiche ();
+	  p3.Affiche ();
+	  System.out.println("\n ---------------------------\n");
+	  if (p1.Coincide(p3) == true)
+	  System.out.println("Les 2 points p1 et p3 coïncident");
+	  else
+	  System.out.println("Les 2 points ne coïncident pas");
+	  System.out.println("\n ---------------------------\n");
+	  System.out.println("translation des point ");
+	  p1.TranslHoriz (4);
+	  p2.TranslVert (3);
+	  p3.Translation (5,2);
+	  p1.Affiche ();
+	  p2.Affiche ();
+	  p3.Affiche ();
+	  System.out.println("\n ---------------------------\n");
+	  System.out.println("modification des attributs des points") ;
+	  p1.setNom("SRI21");
+	  p2.setAbscisse(25);
+	  p3.setOrdonnée(50);
+	  p1.Affiche ();
+	  p2.Affiche ();
+	  p3.Affiche ();
+	  System.out.println("\n ---------------------------\n");
+	  System.out.println("utilisation des méthodes get");
+	  String x=p1.getNom();
+	  int y=p1.getAbscisse();
+	  int z=p1.getOrdonnée();
+	  System.out.println(" le nom du point p1 est : " + x);
+	  System.out.println(" son abscisse est : " + y);
+	  System.out.println(" son ordonnée est : " + z);
+	  }
+	  }
+
+
+
